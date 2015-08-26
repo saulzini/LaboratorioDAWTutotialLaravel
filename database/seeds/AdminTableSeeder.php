@@ -1,0 +1,25 @@
+<?php
+
+
+use Illuminate\Database\Seeder;
+
+class AdminTableSeeder extends Seeder {
+
+    public function run()
+    {
+        \DB::table('users')->insert(array (
+            'first_name'  => 'Saul',
+            'last_name'   => 'Juarez',
+            'email'       => 'saulzini@gmail.com',
+            'password'    => \Hash::make('secret'),
+            'type'        => 'admin',
+            'full_name'   => 'Saul Juarez'
+        ));
+
+        \DB::table('user_profiles')->insert(array (
+            'user_id' => 1,
+            'birthdate' => '1983/09/23'
+        ));
+    }
+
+}
